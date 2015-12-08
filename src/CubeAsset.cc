@@ -1,6 +1,9 @@
 #include "CubeAsset.h"
 
 CubeAsset::CubeAsset() {
+	
+
+	//draw cube
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
     -0.5, -0.5, -0.5 //0
@@ -74,6 +77,29 @@ void CubeAsset::Draw(GLuint program_token) {
     std::cerr << "Drawing Cube with invalid program" << std::endl;
     return;
   }
+
+//set up stuff to send to shader/ added 8/12
+	
+// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
+glm::mat4 Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
+// Camera matrix
+glm::mat4 View       = glm::lookAt(
+					glm::vec3(4,3,-3), // Camera is at (4,3,-3), in World Space
+					glm::vec3(0,0,0), // and looks at the origin
+					glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
+          		   );
+// Model matrix : an identity matrix (model will be at the origin)
+glm::mat4 Model      = glm::mat4(1.0f);
+// Our ModelViewProjection : multiplication of our 3 matrices
+glm::mat4 MVP        = Projection * View * Model; // Remember, matrix multiplication is the other way around
+
+//send Projection, view and model to shader (new stuff)
+  glUniformMatrix4fv(0, 1, GL_FALSE, &Projection[0][0]);
+  glUniformMatrix4fv(1, 1, GL_FALSE, &View[0][0]);
+  glUniformMatrix4fv(2, 1, GL_FALSE, &Model[0][0]);
+
+
+
   GLint validation_ok;
   glValidateProgram(program_token);
   glGetProgramiv(program_token, GL_VALIDATE_STATUS, &validation_ok);

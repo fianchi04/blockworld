@@ -4,6 +4,10 @@
 #include <memory>
 
 #include <GL/gl.h>
+//added 8/12
+#include <GL/gl.h>
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
 
 #include "common.h"
 #include "GameAssetManager.h"

@@ -4,7 +4,13 @@ in vec3 position;
 
 out vec3 frag_color;
 
-mat4 projection(
+//added 8/12
+uniform mat4 Projection;
+uniform mat4 View;
+uniform mat4 Model;
+
+
+/*mat4 projection(
     float angle_of_view_y,
     float aspect_ratio,
     float z_near,
@@ -26,11 +32,13 @@ mat4 translate(float x, float y, float z) {
              vec4(0.0, 0.0, 1.0, 0.0),
              vec4(x, y, z, 1.0)
            );
-}
+}*/
 
 void main() {
-      gl_Position = projection(radians(45.0), 4.0/3.0, -0.1, -1000.0)
+      /*gl_Position = projection(radians(45.0), 4.0/3.0, -0.1, -1000.0)
                       * translate(0.0, 0.0, -5.0)
-                      * vec4(position, 1.0f);
+                      * vec4(position, 1.0f);*/
+	//added 8/12
+	gl_Position = (Projection * View * Model) * vec4(position, 1);
       frag_color = vec3(1.0, 1.0, 1.0); // white
 }

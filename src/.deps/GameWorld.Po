@@ -94,34 +94,7 @@ GameWorld.o: GameWorld.cc /usr/include/stdc-predef.h GameWorld.h \
  /usr/include/c++/5.1.1/bits/shared_ptr_atomic.h \
  /usr/include/c++/5.1.1/bits/atomic_base.h \
  /usr/include/c++/5.1.1/backward/auto_ptr.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/inttypes.h common.h \
- GameAssetManager.h /usr/include/c++/5.1.1/vector \
- /usr/include/c++/5.1.1/bits/stl_vector.h \
- /usr/include/c++/5.1.1/bits/stl_bvector.h \
- /usr/include/c++/5.1.1/bits/vector.tcc /usr/include/c++/5.1.1/fstream \
- /usr/include/c++/5.1.1/istream /usr/include/c++/5.1.1/ios \
- /usr/include/c++/5.1.1/bits/ios_base.h \
- /usr/include/c++/5.1.1/bits/locale_classes.h \
- /usr/include/c++/5.1.1/bits/locale_classes.tcc \
- /usr/include/c++/5.1.1/system_error \
- /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/error_constants.h \
- /usr/include/c++/5.1.1/streambuf \
- /usr/include/c++/5.1.1/bits/streambuf.tcc \
- /usr/include/c++/5.1.1/bits/basic_ios.h \
- /usr/include/c++/5.1.1/bits/locale_facets.h \
- /usr/include/c++/5.1.1/cwctype /usr/include/wctype.h \
- /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_base.h \
- /usr/include/c++/5.1.1/bits/streambuf_iterator.h \
- /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_inline.h \
- /usr/include/c++/5.1.1/bits/locale_facets.tcc \
- /usr/include/c++/5.1.1/bits/basic_ios.tcc /usr/include/c++/5.1.1/ostream \
- /usr/include/c++/5.1.1/bits/ostream.tcc \
- /usr/include/c++/5.1.1/bits/istream.tcc \
- /usr/include/c++/5.1.1/bits/codecvt.h \
- /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/basic_file.h \
- /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/5.1.1/bits/fstream.tcc /usr/include/c++/5.1.1/iostream \
- GameAsset.h CubeAsset.h /usr/include/glm/glm.hpp \
+ /usr/include/GL/glext.h /usr/include/inttypes.h /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/5.1.1/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h /usr/include/bits/huge_val.h \
@@ -304,7 +277,33 @@ GameWorld.o: GameWorld.cc /usr/include/stdc-predef.h GameWorld.h \
  /usr/include/glm/gtx/simd_vec4.inl /usr/include/glm/gtx/simd_mat4.hpp \
  /usr/include/glm/detail/intrinsic_matrix.hpp \
  /usr/include/glm/detail/intrinsic_matrix.inl \
- /usr/include/glm/gtx/simd_mat4.inl
+ /usr/include/glm/gtx/simd_mat4.inl common.h GameAssetManager.h \
+ /usr/include/c++/5.1.1/vector /usr/include/c++/5.1.1/bits/stl_vector.h \
+ /usr/include/c++/5.1.1/bits/stl_bvector.h \
+ /usr/include/c++/5.1.1/bits/vector.tcc /usr/include/c++/5.1.1/fstream \
+ /usr/include/c++/5.1.1/istream /usr/include/c++/5.1.1/ios \
+ /usr/include/c++/5.1.1/bits/ios_base.h \
+ /usr/include/c++/5.1.1/bits/locale_classes.h \
+ /usr/include/c++/5.1.1/bits/locale_classes.tcc \
+ /usr/include/c++/5.1.1/system_error \
+ /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/error_constants.h \
+ /usr/include/c++/5.1.1/streambuf \
+ /usr/include/c++/5.1.1/bits/streambuf.tcc \
+ /usr/include/c++/5.1.1/bits/basic_ios.h \
+ /usr/include/c++/5.1.1/bits/locale_facets.h \
+ /usr/include/c++/5.1.1/cwctype /usr/include/wctype.h \
+ /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_base.h \
+ /usr/include/c++/5.1.1/bits/streambuf_iterator.h \
+ /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_inline.h \
+ /usr/include/c++/5.1.1/bits/locale_facets.tcc \
+ /usr/include/c++/5.1.1/bits/basic_ios.tcc /usr/include/c++/5.1.1/ostream \
+ /usr/include/c++/5.1.1/bits/ostream.tcc \
+ /usr/include/c++/5.1.1/bits/istream.tcc \
+ /usr/include/c++/5.1.1/bits/codecvt.h \
+ /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/5.1.1/bits/fstream.tcc /usr/include/c++/5.1.1/iostream \
+ GameAsset.h CubeAsset.h
 
 /usr/include/stdc-predef.h:
 
@@ -581,76 +580,6 @@ GameWorld.h:
 /usr/include/GL/glext.h:
 
 /usr/include/inttypes.h:
-
-common.h:
-
-GameAssetManager.h:
-
-/usr/include/c++/5.1.1/vector:
-
-/usr/include/c++/5.1.1/bits/stl_vector.h:
-
-/usr/include/c++/5.1.1/bits/stl_bvector.h:
-
-/usr/include/c++/5.1.1/bits/vector.tcc:
-
-/usr/include/c++/5.1.1/fstream:
-
-/usr/include/c++/5.1.1/istream:
-
-/usr/include/c++/5.1.1/ios:
-
-/usr/include/c++/5.1.1/bits/ios_base.h:
-
-/usr/include/c++/5.1.1/bits/locale_classes.h:
-
-/usr/include/c++/5.1.1/bits/locale_classes.tcc:
-
-/usr/include/c++/5.1.1/system_error:
-
-/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/error_constants.h:
-
-/usr/include/c++/5.1.1/streambuf:
-
-/usr/include/c++/5.1.1/bits/streambuf.tcc:
-
-/usr/include/c++/5.1.1/bits/basic_ios.h:
-
-/usr/include/c++/5.1.1/bits/locale_facets.h:
-
-/usr/include/c++/5.1.1/cwctype:
-
-/usr/include/wctype.h:
-
-/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_base.h:
-
-/usr/include/c++/5.1.1/bits/streambuf_iterator.h:
-
-/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_inline.h:
-
-/usr/include/c++/5.1.1/bits/locale_facets.tcc:
-
-/usr/include/c++/5.1.1/bits/basic_ios.tcc:
-
-/usr/include/c++/5.1.1/ostream:
-
-/usr/include/c++/5.1.1/bits/ostream.tcc:
-
-/usr/include/c++/5.1.1/bits/istream.tcc:
-
-/usr/include/c++/5.1.1/bits/codecvt.h:
-
-/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/basic_file.h:
-
-/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++io.h:
-
-/usr/include/c++/5.1.1/bits/fstream.tcc:
-
-/usr/include/c++/5.1.1/iostream:
-
-GameAsset.h:
-
-CubeAsset.h:
 
 /usr/include/glm/glm.hpp:
 
@@ -1157,3 +1086,73 @@ CubeAsset.h:
 /usr/include/glm/detail/intrinsic_matrix.inl:
 
 /usr/include/glm/gtx/simd_mat4.inl:
+
+common.h:
+
+GameAssetManager.h:
+
+/usr/include/c++/5.1.1/vector:
+
+/usr/include/c++/5.1.1/bits/stl_vector.h:
+
+/usr/include/c++/5.1.1/bits/stl_bvector.h:
+
+/usr/include/c++/5.1.1/bits/vector.tcc:
+
+/usr/include/c++/5.1.1/fstream:
+
+/usr/include/c++/5.1.1/istream:
+
+/usr/include/c++/5.1.1/ios:
+
+/usr/include/c++/5.1.1/bits/ios_base.h:
+
+/usr/include/c++/5.1.1/bits/locale_classes.h:
+
+/usr/include/c++/5.1.1/bits/locale_classes.tcc:
+
+/usr/include/c++/5.1.1/system_error:
+
+/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/error_constants.h:
+
+/usr/include/c++/5.1.1/streambuf:
+
+/usr/include/c++/5.1.1/bits/streambuf.tcc:
+
+/usr/include/c++/5.1.1/bits/basic_ios.h:
+
+/usr/include/c++/5.1.1/bits/locale_facets.h:
+
+/usr/include/c++/5.1.1/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_base.h:
+
+/usr/include/c++/5.1.1/bits/streambuf_iterator.h:
+
+/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/ctype_inline.h:
+
+/usr/include/c++/5.1.1/bits/locale_facets.tcc:
+
+/usr/include/c++/5.1.1/bits/basic_ios.tcc:
+
+/usr/include/c++/5.1.1/ostream:
+
+/usr/include/c++/5.1.1/bits/ostream.tcc:
+
+/usr/include/c++/5.1.1/bits/istream.tcc:
+
+/usr/include/c++/5.1.1/bits/codecvt.h:
+
+/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/basic_file.h:
+
+/usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++io.h:
+
+/usr/include/c++/5.1.1/bits/fstream.tcc:
+
+/usr/include/c++/5.1.1/iostream:
+
+GameAsset.h:
+
+CubeAsset.h:
