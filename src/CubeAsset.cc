@@ -19,6 +19,7 @@ CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
 
   GLfloat color = 0.2f;
 
+  //set cube color to rgb values in c array
   GLfloat color_buffer[] = {
 	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
 	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,

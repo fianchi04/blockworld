@@ -11,6 +11,7 @@
 
 class CubeAsset : public GameAsset {
  public:
+  //create cube, pass postion vector and color vector
   CubeAsset(glm::vec3,glm::vec3);
   ~CubeAsset();
   virtual glm::vec3 getPos();

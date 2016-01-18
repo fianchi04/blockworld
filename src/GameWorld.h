@@ -9,6 +9,10 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
+#include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+
 #include "common.h"
 #include "GameAssetManager.h"
 #include "CubeAsset.h"
@@ -43,7 +47,7 @@ class GameWorld {
   int jumplength = 0;
 
  private:
-
+  GLfloat randomGen();
   bool jump1 = false;
   std::shared_ptr<GameAssetManager> asset_manager;
   //vectors
