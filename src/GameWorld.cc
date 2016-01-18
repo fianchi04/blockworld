@@ -61,7 +61,43 @@ void GameWorld::move_right(){
 	}
 }
 
+
+void GameWorld::move_jump(GLfloat speed){
+      //if jump has lasted less than 15 updates
+      if(jumplength < 10){
+      //add passed speed to jumpspeed
+      jumpspeed += speed;
+      //counter to see how many frames jump has been on for
+      jumplength ++;
+      }
+	//stop jumping too fast
+	if(jumpspeed > 2){
+		jumpspeed = 2;
+       }
+      
+}
+
+bool GameWorld::canJump(){
+ return jump1;
+}
+
 void GameWorld::Draw() {
+   
+   //every update slow jump speed
+   jumpspeed -= 0.05;
+   //stop jumpspeed going below 0
+   if(jumpspeed < 0.0){
+      jumpspeed = 0.0;
+   }
+
+   //minus gravity + jumpspeed from position y
+   position.y -= (0.98-jumpspeed)*speed;
+   //if player collides with cube, move back and reset jump counters
+   if(asset_manager->checkCollision(position)){
+                jump1 = false;
+		jumplength = 0;
+		position.y+=(0.98-jumpspeed)*speed;
+	}
    //where camera is looking
    glm::vec3 direction(
 	cos(cameray) * sin(camerax),

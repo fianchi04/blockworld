@@ -156,6 +156,10 @@ void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world)
   if (keystates[SDL_SCANCODE_D]){
    game_world->move_right();
   }
+  //jumping on space
+  if (keystates[SDL_SCANCODE_SPACE]){
+    game_world->move_jump(0.3);
+  } 
 }
 
 int main(int argc, char ** argv) {
