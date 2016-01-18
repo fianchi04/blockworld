@@ -137,8 +137,31 @@ ApplicationMode ParseOptions (int argc, char ** argv) {
   return TRANSFORM;
 }
 
+//check for kb input every frame bf drawing
+void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world){
+  int x, y;
+  SDL_GetRelativeMouseState(&x, &y); //getting mouse x,y data
+  game_world->set_camera(x/1000.0, y/1000.0);
+
+
+  if (keystates[SDL_SCANCODE_W]){
+   game_world->move_forward();		
+  }
+  if (keystates[SDL_SCANCODE_A]){
+   game_world->move_left();
+  }
+  if (keystates[SDL_SCANCODE_S]){
+   game_world->move_back();
+  }
+  if (keystates[SDL_SCANCODE_D]){
+   game_world->move_right();
+  }
+}
+
 int main(int argc, char ** argv) {
   Uint32 delay = 1000/60; // in milliseconds
+  const Uint8* keystates = SDL_GetKeyboardState(NULL); //makes an array storing every key and whether it's being pressed
+  SDL_SetRelativeMouseMode(SDL_TRUE); //lock mouse to center of window
 
   auto mode = ParseOptions(argc, argv);
   auto window = InitWorld();
@@ -158,6 +181,7 @@ int main(int argc, char ** argv) {
       SDL_Quit();
       break;
     case SDL_USEREVENT:
+      update(keystates, game_world);
       Draw(window, game_world);
 
       break;
