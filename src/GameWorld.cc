@@ -2,7 +2,8 @@
 
 GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager = std::make_shared<GameAssetManager>(mode);
-  asset_manager->AddAsset(std::make_shared<CubeAsset>());
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(0.0, 0.0, 0.0)); //making a cube
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(1.0, 1.0, 1.0)); //2nd cube
   program_token = asset_manager->returnProgram_token();
 
   model_loc = glGetUniformLocation(program_token, "Model");
@@ -14,6 +15,12 @@ GameWorld::GameWorld (ApplicationMode mode) {
 void GameWorld::set_camera(GLfloat x, GLfloat y){
 	camerax-= x;
 	cameray-= y;
+
+  //limit on camera range
+	if (cameray > 1.5){
+		cameray = 1.5;}
+	if (cameray < -1.5){
+		cameray = -1.5;}
 }
 
 //keyboard input

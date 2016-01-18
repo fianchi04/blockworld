@@ -1,20 +1,20 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset() {
+CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 	
 
 	//draw cube
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
-    -0.5, -0.5, -0.5 //0
-    , -0.5,  0.5, -0.5 //1
-    ,  0.5, -0.5, -0.5 //2
-    ,  0.5,  0.5, -0.5 //3
+    -0.5f + x, -0.5f + y, -0.5f + z //0
+    , -0.5f + x,  0.5f + y, -0.5f + z //1
+    ,  0.5f + x, -0.5f + y, -0.5f + z //2
+    ,  0.5f + x,  0.5f + y, -0.5f + z //3
 	//4 more lines for 4 more vertex points
-    ,0.5, -0.5, 0.5 //4
-	, 0.5, 0.5, 0.5 //5
-	,-0.5, -0.5, 0.5 //6
-	,-0.5, 0.5, 0.5 //7
+    ,0.5f + x, -0.5f + y, 0.5f + z //4
+	, 0.5f + x, 0.5f + y, 0.5f + z //5
+	,-0.5f + x, -0.5f + y, 0.5f + z //6
+	,-0.5f + x, 0.5f + y, 0.5f + z //7
   }; 
 
   element_buffer_length = 36;//total points (below)
