@@ -71,6 +71,11 @@ void GameAssetManager::Draw() {
   }
 }
 
+//return program token (to get in game world)
+GLuint GameAssetManager::returnProgram_token(){
+	return program_token;
+}
+
 /**
  * When given the contents of a vertex shader and fragment shader
  * GameAssetManager::CreateGLProgram will compile and link them.  This

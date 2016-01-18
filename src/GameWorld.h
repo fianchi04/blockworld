@@ -33,5 +33,11 @@ class GameWorld {
   void Draw();
  private:
   std::shared_ptr<GameAssetManager> asset_manager;
+  
+  GLuint program_token;
+//shader data locations
+  GLuint model_loc;
+  GLuint proj_loc;
+  GLuint view_loc;
 };
 #endif // GAMEWORLD_H

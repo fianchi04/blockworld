@@ -27,6 +27,8 @@ class GameAssetManager {
   void operator=(GameAssetManager const&); // assignment
   void AddAsset(std::shared_ptr<GameAsset>);
   void Draw();
+  //
+  GLuint returnProgram_token();
 
  private:
   GLuint CreateGLProgram(std::string &, std::string &);
