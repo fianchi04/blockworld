@@ -1,6 +1,7 @@
 #version 130
 
 in vec3 position;
+in vec3 inputcolor;
 
 out vec3 frag_color;
 
@@ -40,5 +41,5 @@ void main() {
                       * vec4(position, 1.0f);*/
 	//added 8/12
 	gl_Position = (Projection * View * Model) * vec4(position, 1);
-      frag_color = vec3(1.0, 1.0, 1.0); // white
+        frag_color = inputcolor;
 }

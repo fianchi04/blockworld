@@ -17,6 +17,17 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 	,-0.5f + x, 0.5f + y, 0.5f + z //7
   }; 
 
+  GLfloat color_buffer[] = {
+	1.0f, 0.0f, 0.0f,
+	1.0f, 1.0f, 0.0f,
+	1.0f, 0.0f, 0.0f,
+	1.0f, 1.0f, 1.0f,
+	1.0f, 0.0f, 1.0f,
+	1.0f, 0.0f, 1.0f,
+	1.0f, 1.0f, 0.0f,
+	1.0f, 0.0f, 0.0f
+  };
+
   element_buffer_length = 36;//total points (below)
   GLuint element_buffer []  {
 	//each square is made up of 2xtri, connectors of 3 vertex points
@@ -52,6 +63,11 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
   glGenBuffers(1, &element_buffer_token);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_token);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * element_buffer_length, element_buffer, GL_STATIC_DRAW);
+
+  //color buffer
+  glGenBuffers(1, &colorbuffer);
+  glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 24, color_buffer, GL_STATIC_DRAW);
 }
 
 CubeAsset::~CubeAsset() {
@@ -102,6 +118,7 @@ void CubeAsset::Draw(GLuint program_token) {
   }
 
   GLuint position_attrib = glGetAttribLocation(program_token, "position");
+  GLuint color_attrib = glGetAttribLocation(program_token, "inputcolor");
   checkGLError();
 
   glUseProgram(program_token);
@@ -121,6 +138,17 @@ void CubeAsset::Draw(GLuint program_token) {
   glEnableVertexAttribArray(position_attrib);
 
   checkGLError();
+
+  //drawing colors of cube to send to shaders
+  glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
+  glVertexAttribPointer(color_attrib, 
+		3,
+		GL_FLOAT,  
+		GL_FALSE,
+		0,
+		(void*)0
+		);
+  glEnableVertexAttribArray(color_attrib);
 
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, element_buffer_token);
   glDrawElements(
