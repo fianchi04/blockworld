@@ -10,6 +10,9 @@
 
 #include <GL/gl.h>
 
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+
 #include "common.h"
 #include "GameAsset.h"
 
@@ -27,6 +30,7 @@ class GameAssetManager {
   void operator=(GameAssetManager const&); // assignment
   void AddAsset(std::shared_ptr<GameAsset>);
   void Draw();
+  bool checkCollision(glm::vec3 position);
   //
   GLuint returnProgram_token();
 

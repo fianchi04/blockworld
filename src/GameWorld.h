@@ -42,7 +42,7 @@ class GameWorld {
  private:
   std::shared_ptr<GameAssetManager> asset_manager;
   //vectors
-  glm::vec3 position = glm::vec3(1,1,1);
+  glm::vec3 position = glm::vec3(3,1,1);
   glm::vec3 mdirection; //walk direction
   glm::vec3 vright; //walk direction sideways
 

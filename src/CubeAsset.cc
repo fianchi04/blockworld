@@ -1,20 +1,20 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
-	
+CubeAsset::CubeAsset(glm::vec3 p) {
+	pos = p;
 
 	//draw cube
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
-    -0.5f + x, -0.5f + y, -0.5f + z //0
-    , -0.5f + x,  0.5f + y, -0.5f + z //1
-    ,  0.5f + x, -0.5f + y, -0.5f + z //2
-    ,  0.5f + x,  0.5f + y, -0.5f + z //3
+    -0.5f + p.x, -0.5f + p.y, -0.5f + p.z //0
+    , -0.5f + p.x,  0.5f + p.y, -0.5f + p.z //1
+    ,  0.5f + p.x, -0.5f + p.y, -0.5f + p.z //2
+    ,  0.5f + p.x,  0.5f + p.y, -0.5f + p.z //3
 	//4 more lines for 4 more vertex points
-    ,0.5f + x, -0.5f + y, 0.5f + z //4
-	, 0.5f + x, 0.5f + y, 0.5f + z //5
-	,-0.5f + x, -0.5f + y, 0.5f + z //6
-	,-0.5f + x, 0.5f + y, 0.5f + z //7
+    ,0.5f + p.x, -0.5f + p.y, 0.5f + p.z //4
+	, 0.5f + p.x, 0.5f + p.y, 0.5f + p.z //5
+	,-0.5f + p.x, -0.5f + p.y, 0.5f + p.z //6
+	,-0.5f + p.x, 0.5f + p.y, 0.5f + p.z //7
   }; 
 
   GLfloat color_buffer[] = {
@@ -71,6 +71,10 @@ CubeAsset::CubeAsset(GLfloat x, GLfloat y, GLfloat z) {
 }
 
 CubeAsset::~CubeAsset() {
+}
+
+glm::vec3 CubeAsset::getPos(){
+	return pos;
 }
 
 #ifdef DEBUG

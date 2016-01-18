@@ -71,6 +71,29 @@ void GameAssetManager::Draw() {
   }
 }
 
+bool GameAssetManager::checkCollision(glm::vec3 p){
+
+   //go through each cube
+   for(auto ga: draw_list){
+     //get each cubes position
+     glm::vec3 apos = ga->getPos();
+
+    //check if camera pos is inside the cube
+    if(p.x < apos.x + 0.8){
+    if(p.x > apos.x - 0.8){
+    if(p.y-0.5 < apos.y + 0.8){
+    if(p.y-0.5 > apos.y - 0.8){
+    if(p.z < apos.z + 0.8){
+    if(p.z > apos.z - 0.8){
+	//if camera collides with cube, return true
+	return true;
+     }}}}}}
+  }
+
+  return false;
+
+}
+
 //return program token (to get in game world)
 GLuint GameAssetManager::returnProgram_token(){
 	return program_token;
