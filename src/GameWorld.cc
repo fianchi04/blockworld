@@ -2,13 +2,13 @@
 
 GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager = std::make_shared<GameAssetManager>(mode);
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0, 0.0))); //making a cube
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(1.0, 1.0, 1.0))); //2nd cube
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0, 0.0),glm::vec3(1.0, 0.0, 0.0))); //making a cube
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(1.0, 1.0, 1.0),glm::vec3(1.0, 1.0, 0.0))); //2nd cube
 
   //generate cube floor
   for (int i = 0; i<20; i++){
 	for (int j = 0; j< 20; j++){
-	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j)));
+	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j), glm::vec3(0.0, 0.0, 0.1)));
 	}
   }
   program_token = asset_manager->returnProgram_token();

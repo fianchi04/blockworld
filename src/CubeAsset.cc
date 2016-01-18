@@ -1,6 +1,6 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset(glm::vec3 p) {
+CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
 	pos = p;
 
 	//draw cube
@@ -17,15 +17,17 @@ CubeAsset::CubeAsset(glm::vec3 p) {
 	,-0.5f + p.x, 0.5f + p.y, 0.5f + p.z //7
   }; 
 
+  GLfloat color = 0.2f;
+
   GLfloat color_buffer[] = {
-	1.0f, 0.0f, 0.0f,
-	1.0f, 1.0f, 0.0f,
-	1.0f, 0.0f, 0.0f,
-	1.0f, 1.0f, 1.0f,
-	1.0f, 0.0f, 1.0f,
-	1.0f, 0.0f, 1.0f,
-	1.0f, 1.0f, 0.0f,
-	1.0f, 0.0f, 0.0f
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
+	0.0f+c.x, 0.0f+c.y, 0.0f+c.z,
   };
 
   element_buffer_length = 36;//total points (below)

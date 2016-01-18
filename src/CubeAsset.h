@@ -11,7 +11,7 @@
 
 class CubeAsset : public GameAsset {
  public:
-  CubeAsset(glm::vec3);
+  CubeAsset(glm::vec3,glm::vec3);
   ~CubeAsset();
   virtual glm::vec3 getPos();
   virtual void Draw(GLuint);
