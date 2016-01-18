@@ -15,10 +15,20 @@ void GameWorld::set_camera(GLfloat x, GLfloat y){
 	camerax-= x;
 	cameray-= y;
 }
-void GameWorld::move_forward(){}
-void GameWorld::move_back(){}
-void GameWorld::move_left(){}
-void GameWorld::move_right(){}
+
+//keyboard input
+void GameWorld::move_forward(){
+	position+=mdirection*speed;
+}
+void GameWorld::move_back(){
+	position-=mdirection*speed;
+}
+void GameWorld::move_left(){
+	position-=vright*speed;
+}
+void GameWorld::move_right(){
+	position+=vright*speed;
+}
 
 void GameWorld::Draw() {
    //where camera is looking
