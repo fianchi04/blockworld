@@ -10,6 +10,7 @@ GameWorld::GameWorld (ApplicationMode mode) {
 
   //add diamond
   asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(2.0, 2.0, 2.0),glm::vec3(0.5, 0.5, 0.5)));
+
   //generate cube floor
   for (int i = 0; i<20; i++){
 	for (int j = 0; j< 20; j++){
@@ -29,6 +30,11 @@ GameWorld::GameWorld (ApplicationMode mode) {
 	for (int n = 0; n<20 ; n++){
 		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + m, 5.0, 25.0 + n), glm::vec3(0.0, 0.0, randomGen())));
 	}
+  }
+
+  //generate random cubes
+  for (int o = 0; o< 10; o++){
+	asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen() * 20.0, randomGen()*2.0, randomGen()*20.0), glm::vec3(0.0, randomGen(), 0.5)));
   }
 
   program_token = asset_manager->returnProgram_token();
