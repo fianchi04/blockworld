@@ -1,5 +1,8 @@
 #include "DiamondAsset.h"
 
+/**
+ * Draw diamond based on location of vertices relative to 0, assign colour based on RGB
+**/
 DiamondAsset::DiamondAsset(glm::vec3 p, glm::vec3 c) {
 	pos = p;
 	//draw diamond
@@ -66,6 +69,9 @@ DiamondAsset::DiamondAsset(glm::vec3 p, glm::vec3 c) {
 DiamondAsset::~DiamondAsset() {
 }
 
+/**
+ * return position of diamond
+ **/
 glm::vec3 DiamondAsset::getPos(){
 	return pos;
 }
@@ -77,23 +83,15 @@ glm::vec3 DiamondAsset::getPos(){
 #define checkGLError()
 #endif
 
-/*void checkError(std::string file, int line) {
-  GLenum gl_error = glGetError();
-  if(GL_NO_ERROR != gl_error) {
-    std::cerr << "GL error in " << file << " at line " << line << " error: " << gl_error << std::endl;
-    exit(-1);
-  }
-}*/
 
+/**
+ * check for error in drawing diamond
+**/
 void DiamondAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
     std::cerr << "Drawing Diamond with invalid program" << std::endl;
     return;
   }
-
-
-
-
 
 
   GLint validation_ok;

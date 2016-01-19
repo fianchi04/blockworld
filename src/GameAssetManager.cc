@@ -71,6 +71,9 @@ void GameAssetManager::Draw() {
   }
 }
 
+/**
+ * Check for collisions by looping through each item in draw list, getting position and comparing position to camera location.
+**/
 bool GameAssetManager::checkCollision(glm::vec3 p){
 
    //go through each cube
@@ -94,7 +97,9 @@ bool GameAssetManager::checkCollision(glm::vec3 p){
 
 }
 
-//return program token (to get in game world)
+/**
+ * return program token to use in gameworld
+ **/
 GLuint GameAssetManager::returnProgram_token(){
 	return program_token;
 }

@@ -34,6 +34,9 @@ struct SDLWindowDeleter {
   }
 };
 
+/**
+ * method to draw world
+**/
 void Draw(const std::shared_ptr<SDL_Window> window, const std::shared_ptr<GameWorld> game_world) {
   glClearColor(0.4f, 0.4f, 1.5f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
@@ -44,6 +47,10 @@ void Draw(const std::shared_ptr<SDL_Window> window, const std::shared_ptr<GameWo
   SDL_GL_SwapWindow(window.get());
 }
 
+
+/**
+ * method to initialise world on startup
+ **/
 std::shared_ptr<SDL_Window> InitWorld() {
   Uint32 width = 640;
   Uint32 height = 480;
@@ -137,7 +144,9 @@ ApplicationMode ParseOptions (int argc, char ** argv) {
   return TRANSFORM;
 }
 
-//check for kb input every frame bf drawing
+/**
+ * Check for keyboard input every frame before drawing world
+ **/
 void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world){
   int x, y;
   SDL_GetRelativeMouseState(&x, &y); //getting mouse x,y data

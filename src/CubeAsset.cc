@@ -1,5 +1,9 @@
 #include "CubeAsset.h"
 
+
+/**
+ * Draw cubes based on location of vertices relative to 0, assign colour based on RGB
+**/
 CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
 	pos = p;
 
@@ -76,6 +80,10 @@ CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
 CubeAsset::~CubeAsset() {
 }
 
+
+/**
+ * return position of cube
+**/
 glm::vec3 CubeAsset::getPos(){
 	return pos;
 }
@@ -95,14 +103,14 @@ void checkError(std::string file, int line) {
   }
 }
 
+/**
+ * check for error in drawing cube
+**/
 void CubeAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {
     std::cerr << "Drawing Cube with invalid program" << std::endl;
     return;
   }
-
-
-
 
 
 

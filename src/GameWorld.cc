@@ -1,5 +1,8 @@
 #include "GameWorld.h"
 
+/** 
+* Create cube and diamond assets and assign location and color
+**/
 GameWorld::GameWorld (ApplicationMode mode) {
   
   //add indiv cubes
@@ -44,11 +47,17 @@ GameWorld::GameWorld (ApplicationMode mode) {
   view_loc = glGetUniformLocation(program_token, "View");
   
 }
-//generate random float between 0 and 1
+
+/**
+ * generate random float between 0 and 1
+**/
 GLfloat GameWorld::randomGen(){
   return static_cast<float>(rand())/static_cast<float>(RAND_MAX);
 }
 
+/**
+ * fix camera to the center of the screen and limit range
+**/
 void GameWorld::set_camera(GLfloat x, GLfloat y){
 	camerax-= x;
 	cameray-= y;
@@ -62,6 +71,9 @@ void GameWorld::set_camera(GLfloat x, GLfloat y){
 
 //keyboard input
 
+/**
+ * keyboard input for moving forwards with collision detection
+**/
 void GameWorld::move_forward(){
 	position+=mdirection*speed;	
 	//check collision, if collides move back
@@ -69,6 +81,10 @@ void GameWorld::move_forward(){
 		position-=mdirection*speed;
 	}
 }
+
+/**
+ * keyboard input for moving back with collision detection
+**/
 void GameWorld::move_back(){
 	position-=mdirection*speed;
 	//check collision, if collides move back
@@ -76,6 +92,10 @@ void GameWorld::move_back(){
 		position+=mdirection*speed;
 	}
 }
+
+/**
+ * keyboard input for moving left with collision detection
+**/
 void GameWorld::move_left(){
 	position-=vright*speed;
 	//check collision, if collides move back
@@ -83,6 +103,10 @@ void GameWorld::move_left(){
 		position+=vright*speed;
 	}
 }
+
+/**
+ * keyboard input for moving right with collision detection
+**/
 void GameWorld::move_right(){
 	position+=vright*speed;
 	//check collision, if collides move back
@@ -91,7 +115,9 @@ void GameWorld::move_right(){
 	}
 }
 
-
+/**
+ * keyboard input for jump with controlled jump speed
+**/
 void GameWorld::move_jump(GLfloat speed){
       //if jump has lasted less than 15 updates
       if(jumplength < 10){
@@ -107,10 +133,16 @@ void GameWorld::move_jump(GLfloat speed){
       
 }
 
+/**
+ * checks if jumping is enabled (can only jump once between player touching solid ground)
+**/
 bool GameWorld::canJump(){
  return jump1;
 }
 
+/**
+ * loop to draw the world and all assets and qualities
+**/
 void GameWorld::Draw() {
    
    //every update slow jump speed

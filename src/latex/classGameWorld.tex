@@ -1,0 +1,116 @@
+\hypertarget{classGameWorld}{}\section{Game\+World Class Reference}
+\label{classGameWorld}\index{Game\+World@{Game\+World}}
+
+
+{\ttfamily \#include $<$Game\+World.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameWorld_a17a84e57a80600961088afc753036f89}{Game\+World} (Application\+Mode)
+\item 
+void \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw} ()
+\item 
+void \hyperlink{classGameWorld_a863eb5b4a6d30e050543490b73c03351}{move\+\_\+forward} ()
+\item 
+void \hyperlink{classGameWorld_a0a6ee18221d04443c70a63951f098f10}{move\+\_\+back} ()
+\item 
+void \hyperlink{classGameWorld_a87e9cc176c5958342b54e33e76bf6227}{move\+\_\+left} ()
+\item 
+void \hyperlink{classGameWorld_a96063357a010c28ba7ef3ceb691fc897}{move\+\_\+right} ()
+\item 
+void \hyperlink{classGameWorld_a827a524c738a252fe1ab87f45fcece71}{move\+\_\+jump} (G\+Lfloat)
+\item 
+bool \hyperlink{classGameWorld_a9b35d52aa5239be36a480df580c517f8}{can\+Jump} ()
+\item 
+void \hyperlink{classGameWorld_adf31c1e081b761f1510f0f4053c7f463}{set\+\_\+camera} (G\+Lfloat, G\+Lfloat)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries jumplength} = 0\hypertarget{classGameWorld_ad2297c4f2d1f8f97bd553a2d1d48a532}{}\label{classGameWorld_ad2297c4f2d1f8f97bd553a2d1d48a532}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGameWorld}{Game\+World} allows us to separate the management of the game world from the nuts and bolts of game loop initialisation. The \hyperlink{classGameWorld}{Game\+World} currently has a very simplified scene graph consisiting of a single \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{Game\+World(\+Application\+Mode)}{GameWorld(ApplicationMode)}}]{\setlength{\rightskip}{0pt plus 5cm}Game\+World\+::\+Game\+World (
+\begin{DoxyParamCaption}
+\item[{Application\+Mode}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a17a84e57a80600961088afc753036f89}{}\label{classGameWorld_a17a84e57a80600961088afc753036f89}
+We thread the Application\+Mode through the \hyperlink{classGameWorld}{Game\+World} ss we want to read it in from the user. Threading the state through the various function calls is preferable (in this case) to having some kind of global state.
+
+Create cube and diamond assets and assign location and color 
+
+\subsection{Member Function Documentation}
+\index{Game\+World@{Game\+World}!can\+Jump@{can\+Jump}}
+\index{can\+Jump@{can\+Jump}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{can\+Jump()}{canJump()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+World\+::can\+Jump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a9b35d52aa5239be36a480df580c517f8}{}\label{classGameWorld_a9b35d52aa5239be36a480df580c517f8}
+checks if jumping is enabled (can only jump once between player touching solid ground) \index{Game\+World@{Game\+World}!Draw@{Draw}}
+\index{Draw@{Draw}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{Draw()}{Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a275418607d8286979b276f165ad5876b}{}\label{classGameWorld_a275418607d8286979b276f165ad5876b}
+Calling \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw()} will draw the entire world.
+
+loop to draw the world and all assets and qualities \index{Game\+World@{Game\+World}!move\+\_\+back@{move\+\_\+back}}
+\index{move\+\_\+back@{move\+\_\+back}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+\_\+back()}{move_back()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::move\+\_\+back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a0a6ee18221d04443c70a63951f098f10}{}\label{classGameWorld_a0a6ee18221d04443c70a63951f098f10}
+keyboard input for moving back with collision detection \index{Game\+World@{Game\+World}!move\+\_\+forward@{move\+\_\+forward}}
+\index{move\+\_\+forward@{move\+\_\+forward}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+\_\+forward()}{move_forward()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::move\+\_\+forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a863eb5b4a6d30e050543490b73c03351}{}\label{classGameWorld_a863eb5b4a6d30e050543490b73c03351}
+keyboard input for moving forwards with collision detection \index{Game\+World@{Game\+World}!move\+\_\+jump@{move\+\_\+jump}}
+\index{move\+\_\+jump@{move\+\_\+jump}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+\_\+jump(\+G\+Lfloat)}{move_jump(GLfloat)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::move\+\_\+jump (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{speed}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a827a524c738a252fe1ab87f45fcece71}{}\label{classGameWorld_a827a524c738a252fe1ab87f45fcece71}
+keyboard input for jump with controlled jump speed \index{Game\+World@{Game\+World}!move\+\_\+left@{move\+\_\+left}}
+\index{move\+\_\+left@{move\+\_\+left}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+\_\+left()}{move_left()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::move\+\_\+left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a87e9cc176c5958342b54e33e76bf6227}{}\label{classGameWorld_a87e9cc176c5958342b54e33e76bf6227}
+keyboard input for moving left with collision detection \index{Game\+World@{Game\+World}!move\+\_\+right@{move\+\_\+right}}
+\index{move\+\_\+right@{move\+\_\+right}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+\_\+right()}{move_right()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::move\+\_\+right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a96063357a010c28ba7ef3ceb691fc897}{}\label{classGameWorld_a96063357a010c28ba7ef3ceb691fc897}
+keyboard input for moving right with collision detection \index{Game\+World@{Game\+World}!set\+\_\+camera@{set\+\_\+camera}}
+\index{set\+\_\+camera@{set\+\_\+camera}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{set\+\_\+camera(\+G\+Lfloat, G\+Lfloat)}{set_camera(GLfloat, GLfloat)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::set\+\_\+camera (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{x, }
+\item[{G\+Lfloat}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_adf31c1e081b761f1510f0f4053c7f463}{}\label{classGameWorld_adf31c1e081b761f1510f0f4053c7f463}
+fix camera to the center of the screen and limit range 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+World.\+h\item 
+Game\+World.\+cc\end{DoxyCompactItemize}
