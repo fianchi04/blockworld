@@ -160,6 +160,9 @@ void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world)
   if (keystates[SDL_SCANCODE_SPACE]){
     game_world->move_jump(0.3);
   } 
+  if (keystates[SDL_SCANCODE_ESCAPE]){
+    SDL_Quit();
+  }
 }
 
 int main(int argc, char ** argv) {
@@ -183,11 +186,12 @@ int main(int argc, char ** argv) {
     switch (event.type) {
     case SDL_QUIT:
       SDL_Quit();
+
       break;
     case SDL_USEREVENT:
-      update(keystates, game_world);
+      
       Draw(window, game_world);
-
+       update(keystates, game_world);
       break;
     default:
       break;

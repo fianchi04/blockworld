@@ -81,8 +81,8 @@ bool GameAssetManager::checkCollision(glm::vec3 p){
     //check if camera pos is inside the cube
     if(p.x < apos.x + 0.8){
     if(p.x > apos.x - 0.8){
-    if(p.y-0.5 < apos.y + 0.8){
-    if(p.y-0.5 > apos.y - 0.8){
+    if(p.y-1.0 < apos.y + 0.8){
+    if(p.y-0.0> apos.y - 0.8){
     if(p.z < apos.z + 0.8){
     if(p.z > apos.z - 0.8){
 	//if camera collides with cube, return true

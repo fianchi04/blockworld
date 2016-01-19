@@ -10,7 +10,7 @@ GameWorld::GameWorld (ApplicationMode mode) {
   //generate cube floor
   for (int i = 0; i<20; i++){
 	for (int j = 0; j< 20; j++){
-	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j), glm::vec3(randomGen(), 0.0, 0.0)));
+	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j), glm::vec3(0.0, randomGen(), 0.0)));
 	}
   }
   program_token = asset_manager->returnProgram_token();
