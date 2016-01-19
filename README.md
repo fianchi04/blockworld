@@ -33,8 +33,10 @@ The build process should create a binary that can be executed as follows:
 
 > $ ./src/shaderexample
 
-See
+# User Control #
 
-> $ ./src/shaderexample --help
+Move player using standard W-A-S-D style.
+Move camera using mouse.
+Jump using space bar.
+Close game by pressing Escape button.
 
-for usage instructions.
