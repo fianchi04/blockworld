@@ -1,0 +1,19 @@
+language: cpp
+compiler:
+- gcc
+- g++
+
+script:
+- autoreconf -i
+- ./configure
+- make
+
+branches:
+only:
+master
+
+os:
+linux
+
+sudo:
+true
