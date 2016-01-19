@@ -7,12 +7,29 @@ GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0, 0.0),glm::vec3(1.0, 0.0, 0.0))); //making a cube
   asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(1.0, 1.0, 1.0),glm::vec3(1.0, 1.0, 0.0))); //2nd cube
 
+  
+
   //generate cube floor
   for (int i = 0; i<20; i++){
 	for (int j = 0; j< 20; j++){
 	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j), glm::vec3(0.0, randomGen(), 0.0)));
 	}
   }
+
+  //generate some stairs
+  for (int k = 0; k<20; k++){
+	for (int l = 0; l<5; l++){
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + k, 0.0 + l, 20.0 + l), glm::vec3(0.0, 0.0, randomGen())));
+	}
+  } 
+
+  //generate cube floor at top of stairs
+  for (int m = 0; m < 20; m++){
+	for (int n = 0; n<20 ; n++){
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + m, 5.0, 25.0 + n), glm::vec3(0.0, 0.0, randomGen())));
+	}
+  }
+
   program_token = asset_manager->returnProgram_token();
 
   model_loc = glGetUniformLocation(program_token, "Model");
