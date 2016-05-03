@@ -35,6 +35,17 @@ GameWorld::GameWorld (ApplicationMode mode) {
 	}
   }
 
+  //generate walls
+  for (int x = 0; x< 20; x++){
+	for(int y = 0; y<5; y++){
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + x, 0.0 + y, 0.0), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2))); 
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0 + y, 0.0 + x), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2))); 
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(20.0, 0.0 + y, 0.0 + x), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2))); 
+	}
+  }
+
+	
+
   //generate random cubes
   for (int o = 0; o< 10; o++){
 	asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen() * 20.0, randomGen()*2.0, randomGen()*20.0), glm::vec3(0.0, randomGen(), 0.5)));
