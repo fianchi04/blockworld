@@ -72,29 +72,19 @@ void GameAssetManager::Draw() {
 }
 
 /**
- * Check for collisions by looping through each item in draw list, getting position and comparing position to camera location.
+ * Check for collisions with camera by comparing generated min and max points of camera with each cube.
 **/
 bool GameAssetManager::checkCollision(glm::vec3 p){
 
+   glm::vec3 min = p - glm::vec3(0.3, 1.0, 0.3);
+   glm::vec3 max = p + glm::vec3(0.3, 0.5, 0.3);
    //go through each cube
    for(auto ga: draw_list){
-     //get each cubes position
-     glm::vec3 apos = ga->getPos();
-
-    //check if camera pos is inside the cube
-    if(p.x < apos.x + 0.8){
-    if(p.x > apos.x - 0.8){
-    if(p.y-1.0 < apos.y + 0.8){
-    if(p.y-0.0> apos.y - 0.8){
-    if(p.z < apos.z + 0.8){
-    if(p.z > apos.z - 0.8){
-	//if camera collides with cube, return true
+    if(ga->collides(min, max)){
 	return true;
-     }}}}}}
+    }
   }
-
   return false;
-
 }
 
 /**

@@ -8,11 +8,11 @@ GameWorld::GameWorld (ApplicationMode mode) {
   //add indiv cubes
   srand(time(NULL));
   asset_manager = std::make_shared<GameAssetManager>(mode);
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0, 0.0),glm::vec3(1.0, 0.0, 0.0))); //making a cube
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(1.0, 1.0, 1.0),glm::vec3(1.0, 1.0, 0.0))); //2nd cube
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(16.0, 1.0, 2.0),glm::vec3(1.0, 0.0, 0.0))); //making a cube
+  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(10.0, 1.0, 10.0),glm::vec3(1.0, 1.0, 0.0))); //2nd cube
 
   //add diamond
-  asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(2.0, 2.0, 2.0),glm::vec3(0.5, 0.5, 0.5)));
+  asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(12.0, 2.0, 12.0),glm::vec3(0.5, 0.5, 0.5)));
 
   //generate cube floor
   for (int i = 0; i<20; i++){

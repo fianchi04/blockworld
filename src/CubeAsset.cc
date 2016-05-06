@@ -75,6 +75,9 @@ CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
   glGenBuffers(1, &colorbuffer);
   glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
   glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 24, color_buffer, GL_STATIC_DRAW);
+
+  //generate min and max coordinates for aabb collision detection
+  genBB(p);
 }
 
 CubeAsset::~CubeAsset() {

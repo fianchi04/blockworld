@@ -30,8 +30,7 @@ class GameAssetManager {
   void operator=(GameAssetManager const&); // assignment
   void AddAsset(std::shared_ptr<GameAsset>);
   void Draw();
-  bool checkCollision(glm::vec3 position);
-  //
+  bool checkCollision(glm::vec3);
   GLuint returnProgram_token();
 
  private:
