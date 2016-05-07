@@ -107,7 +107,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_shaderexample_OBJECTS = main.$(OBJEXT) GameWorld.$(OBJEXT) \
 	GameAssetManager.$(OBJEXT) GameAsset.$(OBJEXT) \
-	CubeAsset.$(OBJEXT) DiamondAsset.$(OBJEXT)
+	CubeAsset.$(OBJEXT) DiamondAsset.$(OBJEXT) \
+	FloorAsset.$(OBJEXT)
 shaderexample_OBJECTS = $(am_shaderexample_OBJECTS)
 shaderexample_LDADD = $(LDADD)
 AM_V_lt = $(am__v_lt_$(V))
@@ -313,8 +314,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-EXTRA_DIST = GameWorld.h GameAssetManager.h GameAsset.h CubeAsset.h DiamondAsset.h
-shaderexample_SOURCES = main.cc GameWorld.cc GameAssetManager.cc GameAsset.cc CubeAsset.cc DiamondAsset.cc
+EXTRA_DIST = GameWorld.h GameAssetManager.h GameAsset.h CubeAsset.h DiamondAsset.h FloorAsset.h
+shaderexample_SOURCES = main.cc GameWorld.cc GameAssetManager.cc GameAsset.cc CubeAsset.cc DiamondAsset.cc FloorAsset.cc
 AM_CPPFLAGS = -DGL_GLEXT_PROTOTYPES -DGL3_PROTOTYPES -std=c++11 \
 	$(gl_CFLAGS) $(glew_CFLAGS) $(sdl2_CFLAGS) $(BOOST_CPPFLAGS)
 all: all-am
@@ -412,6 +413,7 @@ distclean-compile:
 
 include ./$(DEPDIR)/CubeAsset.Po
 include ./$(DEPDIR)/DiamondAsset.Po
+include ./$(DEPDIR)/FloorAsset.Po
 include ./$(DEPDIR)/GameAsset.Po
 include ./$(DEPDIR)/GameAssetManager.Po
 include ./$(DEPDIR)/GameWorld.Po

@@ -15,39 +15,30 @@ GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(12.0, 2.0, 12.0),glm::vec3(0.5, 0.5, 0.5)));
 
   //generate cube floor
-  for (int i = 0; i<20; i++){
-	for (int j = 0; j< 45; j++){
-	  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + i, -1.0, 0.0 + j), glm::vec3(0.0, randomGen(), 0.0)));
-	}
-  }
+  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, -1.0, 10.0), glm::vec3(0.0, 0.0, randomGen())));
+  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, 5.0, 34.0), glm::vec3(0.0, 0.0, randomGen())));
 
   //generate some stairs
   for (int k = 0; k<20; k++){
 	for (int l = 0; l<5; l++){
-		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + k, 0.0 + l, 20.0 + l), glm::vec3(0.0, 0.0, randomGen())));
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.5 + k, 0.0 + l, 20.0 + l), glm::vec3(0.0, 0.0, randomGen())));
 	}
   } 
 
-  //generate cube floor at top of stairs
-  for (int m = 0; m < 20; m++){
-	for (int n = 0; n<20 ; n++){
-		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + m, 5.0, 25.0 + n), glm::vec3(0.0, 0.0, randomGen())));
-	}
-  }
 
   //generate walls
   for (int x = 0; x< 20; x++){
 	for(int y = 0; y<5; y++){
 		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + x, 0.0 + y, 0.0), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2))); 
 		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0 + y, 0.0 + x), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2))); 
-		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(19.0, 0.0 + y, 0.0 + x), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(20.0, 0.0 + y, 0.0 + x), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));
 		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0 + x, 0.0 + y, 44.0), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));  
 	}
   }
    for(int z = 0; z< 25; z++){
 	for( int y = 0; y<5; y++){
 		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(0.0, 0.0 + y, 20.0 + z), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));
-		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(19.0, 0.0 + y, 20.0 + z), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));  
+		asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(20.0, 0.0 + y, 20.0 + z), glm::vec3(1.0, randomGen()*0.2, randomGen()*0.2)));  
 	}
   }
 

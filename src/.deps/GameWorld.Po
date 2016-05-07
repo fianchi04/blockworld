@@ -303,7 +303,7 @@ GameWorld.o: GameWorld.cc /usr/include/stdc-predef.h GameWorld.h \
  /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/5.1.1/x86_64-redhat-linux/bits/c++io.h \
  /usr/include/c++/5.1.1/bits/fstream.tcc GameAsset.h CubeAsset.h \
- DiamondAsset.h
+ DiamondAsset.h FloorAsset.h
 
 /usr/include/stdc-predef.h:
 
@@ -1158,3 +1158,5 @@ GameAsset.h:
 CubeAsset.h:
 
 DiamondAsset.h:
+
+FloorAsset.h:

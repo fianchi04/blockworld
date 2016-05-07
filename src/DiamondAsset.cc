@@ -65,8 +65,10 @@ DiamondAsset::DiamondAsset(glm::vec3 p, glm::vec3 c) {
   glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
   glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 24, color_buffer, GL_STATIC_DRAW);
 
-  //generate min and max coords for aabb collision detection
-  genBB(p);
+ //vector stores parameter/2 of shape (from centre)
+  glm::vec3 param = glm::vec3(0.5, 0.5, 0.5);
+  //generate min and max coordinates for aabb collision detection
+  genBB(p, param);
 }
 
 DiamondAsset::~DiamondAsset() {
