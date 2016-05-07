@@ -46,7 +46,7 @@ GameWorld::GameWorld (ApplicationMode mode) {
 
   //generate random cubes
   for (int o = 0; o< 10; o++){
-	asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen() * 20.0, randomGen()*2.0, randomGen()*20.0), glm::vec3(0.0, randomGen(), 0.5)));
+	asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen() * 20.0 + 1, randomGen()*2.0, randomGen()*20.0), glm::vec3(0.0, randomGen(), 0.5)));
   }
 
   program_token = asset_manager->returnProgram_token();

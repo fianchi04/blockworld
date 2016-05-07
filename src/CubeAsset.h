@@ -22,6 +22,8 @@ class CubeAsset : public GameAsset {
   GLuint vertex_buffer_token, element_buffer_token;
   GLuint colorbuffer;
   glm::vec3 pos;
+  glm::mat4 anim;
+  GLfloat angle;
 };
 
 #endif // CUBEASSET_H

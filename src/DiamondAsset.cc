@@ -121,6 +121,16 @@ void DiamondAsset::Draw(GLuint program_token) {
   GLuint color_attrib = glGetAttribLocation(program_token, "inputcolor");
   checkGLError();
 
+  GLuint anim_location = glGetUniformLocation(program_token, "Anim");
+  //angle change every frame
+  angle += 0.001f;
+
+  anim = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(pos.x, pos.y, pos.z));  
+
+
+ 
+  glUniformMatrix4fv(anim_location, 1, GL_FALSE, &anim[0][0]);
+
   glUseProgram(program_token);
   checkGLError();
 

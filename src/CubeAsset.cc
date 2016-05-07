@@ -139,10 +139,14 @@ void CubeAsset::Draw(GLuint program_token) {
 
   GLuint position_attrib = glGetAttribLocation(program_token, "position");
   GLuint color_attrib = glGetAttribLocation(program_token, "inputcolor");
+  GLuint anim_location = glGetUniformLocation(program_token, "Anim");
+    glUniformMatrix4fv(anim_location, 1, GL_FALSE, &anim[0][0]);
   checkGLError();
 
   glUseProgram(program_token);
   checkGLError();
+
+
 
   // use the previously transferred buffer as the vertex array.  This way
   // we transfer the buffer once -- at construction -- not on every frame.
@@ -158,6 +162,7 @@ void CubeAsset::Draw(GLuint program_token) {
   glEnableVertexAttribArray(position_attrib);
 
   checkGLError();
+
 
   //drawing colors of cube to send to shaders
   glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
