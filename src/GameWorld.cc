@@ -5,18 +5,27 @@
 **/
 GameWorld::GameWorld (ApplicationMode mode) {
   
-  //add indiv cubes
+  
   srand(time(NULL));
   asset_manager = std::make_shared<GameAssetManager>(mode);
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(16.0, 1.0, 2.0),glm::vec3(1.0, 0.0, 0.0))); //making a cube
-  asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(10.0, 1.0, 10.0),glm::vec3(1.0, 1.0, 0.0))); //2nd cube
+  //add cubes on lower floor
+  for (int a = 0; a <15; a++){
+	asset_manager->AddAsset(std::make_shared<CubeAsset>(glm::vec3(randomGen()*20 + 1.0, randomGen()*4, randomGen()*20),glm::vec3(1.0 - (randomGen()/2), 1.0 - (randomGen()/2), 1.0 - (randomGen()/2)))); 
+  }
 
-  //add diamond
-  asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(12.0, 2.0, 12.0),glm::vec3(0.5, 0.5, 0.5)));
+  //add diamonds on top floor
+  for (int a = 0; a<15; a++){
+	if(a <5){
+		asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen()*20.0, randomGen()*4 + 6.0, randomGen()*20 + 25),glm::vec3(1 - (randomGen()/4), 0.0, 0.0)));}
+	else if (a >=5 && a<10){
+		asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen()*20.0, randomGen()*4 + 6.0, randomGen()*20 + 25),glm::vec3(0.0, 1 - (randomGen()/4), 0.0)));}
+	else {
+		asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen()*20.0, randomGen()*4 + 6.0, randomGen()*20 + 25),glm::vec3(0.0, 0.0, 1 - (randomGen()/4))));}
+	}
 
-  //generate cube floor
-  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, -1.0, 10.0), glm::vec3(0.0, 0.0, randomGen())));
-  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, 5.0, 34.0), glm::vec3(0.0, 0.0, randomGen())));
+  //generate floor
+  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, -1.0, 10.0), glm::vec3(0.0, 0.0, 1 - (randomGen()/4))));
+  asset_manager->AddAsset(std::make_shared<FloorAsset>(glm::vec3(10.0, 5.0, 34.5), glm::vec3(0.0, 0.0, 1 - (randomGen()/4))));
 
   //generate some stairs
   for (int k = 0; k<20; k++){
@@ -43,12 +52,6 @@ GameWorld::GameWorld (ApplicationMode mode) {
   }
 
 	
-
-  //generate random cubes
-  for (int o = 0; o< 10; o++){
-	asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(randomGen() * 20.0 + 1, randomGen()*2.0, randomGen()*20.0), glm::vec3(0.0, randomGen(), 0.5)));
-  }
-
   program_token = asset_manager->returnProgram_token();
 
   model_loc = glGetUniformLocation(program_token, "Model");

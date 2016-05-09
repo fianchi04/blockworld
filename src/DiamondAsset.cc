@@ -123,7 +123,7 @@ void DiamondAsset::Draw(GLuint program_token) {
 
   GLuint anim_location = glGetUniformLocation(program_token, "Anim");
   //angle change every frame
-  angle += 0.001f;
+   angle += 0.01f;
 
   anim = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(pos.x, pos.y, pos.z));  
 
