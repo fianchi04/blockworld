@@ -176,6 +176,9 @@ void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world)
   if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)){
      game_world->add_cube();
   }
+  if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_RIGHT)){
+     game_world->add_diamond();
+  }
 }
 
 int main(int argc, char ** argv) {

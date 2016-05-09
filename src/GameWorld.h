@@ -43,6 +43,7 @@ class GameWorld {
   void move_left();
   void move_right();
   void add_cube();
+  void add_diamond();
   void move_jump(GLfloat);
   bool canJump();
 //camera data

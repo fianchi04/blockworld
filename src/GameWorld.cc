@@ -82,14 +82,25 @@ void GameWorld::set_camera(GLfloat x, GLfloat y){
 		cameray = -1.5;}
 }
 
+/**
+ * add cube to game space from mouse input
+**/
 void GameWorld::add_cube(){
 
     glm::vec3 temp = position + direction * glm::vec3(3,3,3);
     asset_manager->AddAsset(std::make_shared<CubeAsset>(temp, 
-                                                        glm::vec3(1.0, randomGen()/2, 0.0)));
+                                                        glm::vec3(randomGen(), 0.0, 0.0)));
 }
 
-//keyboard input
+/**
+ * add diamond to game space from mouse input
+**/
+void GameWorld::add_diamond(){
+
+    glm::vec3 temp = position + direction * glm::vec3(3,3,3);
+    asset_manager->AddAsset(std::make_shared<DiamondAsset>(temp, 
+                                                        glm::vec3(0.0, randomGen()/2, randomGen())));
+}
 
 /**
  * keyboard input for moving forwards with collision detection
