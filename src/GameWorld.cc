@@ -82,6 +82,13 @@ void GameWorld::set_camera(GLfloat x, GLfloat y){
 		cameray = -1.5;}
 }
 
+void GameWorld::add_cube(){
+
+    glm::vec3 temp = position + direction * glm::vec3(3,3,3);
+    asset_manager->AddAsset(std::make_shared<CubeAsset>(temp, 
+                                                        glm::vec3(1.0, randomGen()/2, 0.0)));
+}
+
 //keyboard input
 
 /**
@@ -174,7 +181,7 @@ void GameWorld::Draw() {
 		position.y+=(0.98-jumpspeed)*speed;
 	}
    //where camera is looking
-   glm::vec3 direction(
+   direction = glm::vec3(
 	cos(cameray) * sin(camerax),
 	sin(cameray),
 	cos(cameray) * cos(camerax)

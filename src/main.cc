@@ -172,6 +172,10 @@ void update(const Uint8* keystates, const std::shared_ptr<GameWorld> game_world)
   if (keystates[SDL_SCANCODE_ESCAPE]){
     SDL_Quit();
   }
+
+  if(SDL_GetMouseState(NULL,NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)){
+     game_world->add_cube();
+  }
 }
 
 int main(int argc, char ** argv) {

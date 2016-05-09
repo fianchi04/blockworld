@@ -42,6 +42,7 @@ class GameWorld {
   void move_back();
   void move_left();
   void move_right();
+  void add_cube();
   void move_jump(GLfloat);
   bool canJump();
 //camera data
@@ -56,6 +57,7 @@ class GameWorld {
   glm::vec3 position = glm::vec3(3,10,1);
   glm::vec3 mdirection; //walk direction
   glm::vec3 vright; //walk direction sideways
+  glm::vec3 direction;
 
   GLuint program_token;
 //shader data locations
