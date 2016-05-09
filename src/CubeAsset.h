@@ -9,6 +9,9 @@
 
 #include "GameAsset.h"
 
+
+
+
 class CubeAsset : public GameAsset {
  public:
   //create cube, pass postion vector and color vector

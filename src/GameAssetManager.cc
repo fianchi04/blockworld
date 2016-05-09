@@ -59,6 +59,13 @@ void GameAssetManager::operator=(GameAssetManager const& the_manager) {
  * Adds a GameAsset to the scene graph.
  */
 void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
+  for(auto ga: draw_list){
+ 	if(ga -> collides(*the_asset)){
+		std::cout << "asset collide" << std::endl;
+		return; //won't place cube down
+	}
+  }
+
   draw_list.push_back(the_asset);
 }
 
@@ -86,6 +93,9 @@ bool GameAssetManager::checkCollision(glm::vec3 p){
   }
   return false;
 }
+
+
+
 
 /**
  * return program token to use in gameworld
