@@ -81,9 +81,6 @@ CubeAsset::CubeAsset(glm::vec3 p, glm::vec3 c) {
   //generate min and max coordinates for aabb collision detection
   genBB(p, param);
 
-  //assign UUID
-  boost::uuids::random_generator generator;
-  boost::uuids::uuid uuid = generator();
 }
 
 CubeAsset::~CubeAsset() {
