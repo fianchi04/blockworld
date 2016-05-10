@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7egameassetmanager',['~GameAssetManager',['../classGameAssetManager.html#a1270bd61ecbcca563f079803e40c9b77',1,'GameAssetManager']]]
+  ['set_5fcamera',['set_camera',['../classGameWorld.html#adf31c1e081b761f1510f0f4053c7f463',1,'GameWorld']]]
 ];

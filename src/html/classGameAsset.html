@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">GameAsset Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="GameAsset_8h_source.html">GameAsset.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GameAsset:</div>
 <div class="dyncontent">
@@ -97,6 +99,7 @@ Inheritance diagram for GameAsset:</div>
   <map id="GameAsset_map" name="GameAsset_map">
 <area href="classCubeAsset.html" alt="CubeAsset" shape="rect" coords="0,56,92,80"/>
 <area href="classDiamondAsset.html" alt="DiamondAsset" shape="rect" coords="102,56,194,80"/>
+<area href="classFloorAsset.html" alt="FloorAsset" shape="rect" coords="204,56,296,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -108,9 +111,126 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (GLu
 <tr class="memitem:a6b3e7c11efd7084e032f23dfd9374672"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b3e7c11efd7084e032f23dfd9374672"></a>
 virtual glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getPos</b> ()=0</td></tr>
 <tr class="separator:a6b3e7c11efd7084e032f23dfd9374672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e148d5c112bd024739ccffcbee603e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#af6e148d5c112bd024739ccffcbee603e">genBB</a> (glm::vec3, glm::vec3)</td></tr>
+<tr class="separator:af6e148d5c112bd024739ccffcbee603e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c7589d38ad0c59588659326e234057"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a12c7589d38ad0c59588659326e234057">collides</a> (glm::vec3, glm::vec3)</td></tr>
+<tr class="separator:a12c7589d38ad0c59588659326e234057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad5bb6e7ad41b86f3709a75ecb5bacf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a5ad5bb6e7ad41b86f3709a75ecb5bacf">collides</a> (<a class="el" href="classGameAsset.html">GameAsset</a> &amp;a)</td></tr>
+<tr class="separator:a5ad5bb6e7ad41b86f3709a75ecb5bacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47ca91c87610d002d63f59563c038af9"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#a47ca91c87610d002d63f59563c038af9">returnMin</a> ()</td></tr>
+<tr class="separator:a47ca91c87610d002d63f59563c038af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2661492933e0678c4c17b0f77083dc9"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAsset.html#ae2661492933e0678c4c17b0f77083dc9">returnMax</a> ()</td></tr>
+<tr class="separator:ae2661492933e0678c4c17b0f77083dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>holds methods/variables which need to be access via inheritance by all asset types </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a12c7589d38ad0c59588659326e234057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameAsset::collides </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>minB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>maxB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if AABBs are intersecting (passed min and max against the min and max of the current asset </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ad5bb6e7ad41b86f3709a75ecb5bacf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameAsset::collides </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGameAsset.html">GameAsset</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Receives a reference to an asset, calls <a class="el" href="classGameAsset.html#a47ca91c87610d002d63f59563c038af9">returnMin()</a> and <a class="el" href="classGameAsset.html#ae2661492933e0678c4c17b0f77083dc9">returnMax()</a> and passes these to the AABB collision detection- needed for asset-&gt;asset collision </p>
+
+</div>
+</div>
+<a class="anchor" id="af6e148d5c112bd024739ccffcbee603e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameAsset::genBB </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>generate min and max coords for AABBs </p>
+
+</div>
+</div>
+<a class="anchor" id="ae2661492933e0678c4c17b0f77083dc9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 GameAsset::returnMax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>returns the max coordinate vector of an asset </p>
+
+</div>
+</div>
+<a class="anchor" id="a47ca91c87610d002d63f59563c038af9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 GameAsset::returnMin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>returns the min coordinate vector of an asset </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="GameAsset_8h_source.html">GameAsset.h</a></li>
+<li>GameAsset.cc</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

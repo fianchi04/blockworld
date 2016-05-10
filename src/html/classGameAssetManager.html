@@ -108,8 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad3de8ff00d55ba04728b1de8213b2349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32837132bd70a9a9ed537323c2d3d886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAssetManager.html#a32837132bd70a9a9ed537323c2d3d886">Draw</a> ()</td></tr>
 <tr class="separator:a32837132bd70a9a9ed537323c2d3d886"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72a6dcaaa2a17318df017467a2184b53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAssetManager.html#a72a6dcaaa2a17318df017467a2184b53">checkCollision</a> (glm::vec3 position)</td></tr>
-<tr class="separator:a72a6dcaaa2a17318df017467a2184b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e08b31a22ecb815a8c1fe3a6dd463ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAssetManager.html#a6e08b31a22ecb815a8c1fe3a6dd463ed">checkCollision</a> (glm::vec3)</td></tr>
+<tr class="separator:a6e08b31a22ecb815a8c1fe3a6dd463ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80bf9227a397b4aa416388ef94352e29"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameAssetManager.html#a80bf9227a397b4aa416388ef94352e29">returnProgram_token</a> ()</td></tr>
 <tr class="separator:a80bf9227a397b4aa416388ef94352e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -217,7 +217,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a72a6dcaaa2a17318df017467a2184b53"></a>
+<a class="anchor" id="a6e08b31a22ecb815a8c1fe3a6dd463ed"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -230,7 +230,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Check for collisions by looping through each item in draw list, getting position and comparing position to camera location. </p>
+<p>Check for collisions with camera by comparing generated min and max points of camera with each cube. </p>
 
 </div>
 </div>

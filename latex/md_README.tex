@@ -1,0 +1,46 @@
+
+\begin{DoxyItemize}
+\item G\+NU Autotools
+\item Open\+GL 3.\+0
+\item C++11 compiler (tested with G\+CC 4.\+8.\+3+)
+\item \href{http://www.boost.org/}{\tt Boost}
+\item \href{http://glew.sourceforge.net/}{\tt G\+L\+EW}
+\item \href{https://www.libsdl.org/}{\tt S\+D\+L2}
+\item \href{http://glm.g-truc.net/}{\tt G\+LM}
+\end{DoxyItemize}
+
+On Fedora 20 or later you can install these using a single command (as root)\+:
+
+\begin{quote}
+\$ yum install boost-\/$\ast$ glew-\/devel S\+D\+L2\+\_\+$\ast$ glm-\/devel \end{quote}
+
+
+\section*{Building}
+
+After cloning the source code or extracting a distributed archive, change to the directory where the source code is\+:
+
+
+\begin{DoxyCode}
+1 $ autoreconf -i
+2 $ ./configure
+3 $ make
+\end{DoxyCode}
+
+
+Alternatively, if you\textquotesingle{}d like to build the project in debug mode use\+:
+
+\begin{quote}
+\$ make C\+X\+X\+F\+L\+A\+GS=-\/\+D\+D\+E\+B\+UG \end{quote}
+
+
+\section*{Running}
+
+The build process should create a binary that can be executed as follows\+:
+
+\begin{quote}
+\$ ./src/shaderexample \end{quote}
+
+
+\section*{User Control}
+
+Move player using standard W-\/\+A-\/\+S-\/D style. Move camera using mouse. Jump using space bar. Close game by pressing Escape button. 

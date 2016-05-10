@@ -21,7 +21,7 @@ void \hyperlink{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}{Add\+As
 \item 
 void \hyperlink{classGameAssetManager_a32837132bd70a9a9ed537323c2d3d886}{Draw} ()
 \item 
-bool \hyperlink{classGameAssetManager_a72a6dcaaa2a17318df017467a2184b53}{check\+Collision} (glm\+::vec3 position)
+bool \hyperlink{classGameAssetManager_a6e08b31a22ecb815a8c1fe3a6dd463ed}{check\+Collision} (glm\+::vec3)
 \item 
 G\+Luint \hyperlink{classGameAssetManager_a80bf9227a397b4aa416388ef94352e29}{return\+Program\+\_\+token} ()
 \end{DoxyCompactItemize}
@@ -71,12 +71,12 @@ Unimplemented move constructor -- this unimplemented method violates the C++11 m
 )}\hypertarget{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}{}\label{classGameAssetManager_ad3de8ff00d55ba04728b1de8213b2349}
 Adds a \hyperlink{classGameAsset}{Game\+Asset} to the scene graph. \index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!check\+Collision@{check\+Collision}}
 \index{check\+Collision@{check\+Collision}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
-\subsubsection[{\texorpdfstring{check\+Collision(glm\+::vec3 position)}{checkCollision(glm::vec3 position)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Asset\+Manager\+::check\+Collision (
+\subsubsection[{\texorpdfstring{check\+Collision(glm\+::vec3)}{checkCollision(glm::vec3)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Asset\+Manager\+::check\+Collision (
 \begin{DoxyParamCaption}
 \item[{glm\+::vec3}]{p}
 \end{DoxyParamCaption}
-)}\hypertarget{classGameAssetManager_a72a6dcaaa2a17318df017467a2184b53}{}\label{classGameAssetManager_a72a6dcaaa2a17318df017467a2184b53}
-Check for collisions by looping through each item in draw list, getting position and comparing position to camera location. \index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Draw@{Draw}}
+)}\hypertarget{classGameAssetManager_a6e08b31a22ecb815a8c1fe3a6dd463ed}{}\label{classGameAssetManager_a6e08b31a22ecb815a8c1fe3a6dd463ed}
+Check for collisions with camera by comparing generated min and max points of camera with each cube. \index{Game\+Asset\+Manager@{Game\+Asset\+Manager}!Draw@{Draw}}
 \index{Draw@{Draw}!Game\+Asset\+Manager@{Game\+Asset\+Manager}}
 \subsubsection[{\texorpdfstring{Draw()}{Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Asset\+Manager\+::\+Draw (
 \begin{DoxyParamCaption}

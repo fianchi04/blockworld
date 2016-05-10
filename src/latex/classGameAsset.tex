@@ -1,5 +1,9 @@
 \hypertarget{classGameAsset}{}\section{Game\+Asset Class Reference}
 \label{classGameAsset}\index{Game\+Asset@{Game\+Asset}}
+
+
+{\ttfamily \#include $<$Game\+Asset.\+h$>$}
+
 Inheritance diagram for Game\+Asset\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,9 +18,63 @@ virtual void {\bfseries Draw} (G\+Luint)=0\hypertarget{classGameAsset_a961aa51ca
 \item 
 virtual glm\+::vec3 {\bfseries get\+Pos} ()=0\hypertarget{classGameAsset_a6b3e7c11efd7084e032f23dfd9374672}{}\label{classGameAsset_a6b3e7c11efd7084e032f23dfd9374672}
 
+\item 
+void \hyperlink{classGameAsset_af6e148d5c112bd024739ccffcbee603e}{gen\+BB} (glm\+::vec3, glm\+::vec3)
+\item 
+bool \hyperlink{classGameAsset_a12c7589d38ad0c59588659326e234057}{collides} (glm\+::vec3, glm\+::vec3)
+\item 
+bool \hyperlink{classGameAsset_a5ad5bb6e7ad41b86f3709a75ecb5bacf}{collides} (\hyperlink{classGameAsset}{Game\+Asset} \&a)
+\item 
+glm\+::vec3 \hyperlink{classGameAsset_a47ca91c87610d002d63f59563c038af9}{return\+Min} ()
+\item 
+glm\+::vec3 \hyperlink{classGameAsset_ae2661492933e0678c4c17b0f77083dc9}{return\+Max} ()
 \end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\subsection{Detailed Description}
+holds methods/variables which need to be access via inheritance by all asset types 
+
+\subsection{Member Function Documentation}
+\index{Game\+Asset@{Game\+Asset}!collides@{collides}}
+\index{collides@{collides}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{\texorpdfstring{collides(glm\+::vec3, glm\+::vec3)}{collides(glm::vec3, glm::vec3)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Asset\+::collides (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{minB, }
+\item[{glm\+::vec3}]{maxB}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameAsset_a12c7589d38ad0c59588659326e234057}{}\label{classGameAsset_a12c7589d38ad0c59588659326e234057}
+Check if A\+A\+B\+Bs are intersecting (passed min and max against the min and max of the current asset \index{Game\+Asset@{Game\+Asset}!collides@{collides}}
+\index{collides@{collides}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{\texorpdfstring{collides(\+Game\+Asset \&a)}{collides(GameAsset &a)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Game\+Asset\+::collides (
+\begin{DoxyParamCaption}
+\item[{{\bf Game\+Asset} \&}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameAsset_a5ad5bb6e7ad41b86f3709a75ecb5bacf}{}\label{classGameAsset_a5ad5bb6e7ad41b86f3709a75ecb5bacf}
+Receives a reference to an asset, calls \hyperlink{classGameAsset_a47ca91c87610d002d63f59563c038af9}{return\+Min()} and \hyperlink{classGameAsset_ae2661492933e0678c4c17b0f77083dc9}{return\+Max()} and passes these to the A\+A\+BB collision detection-\/ needed for asset-\/$>$asset collision \index{Game\+Asset@{Game\+Asset}!gen\+BB@{gen\+BB}}
+\index{gen\+BB@{gen\+BB}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{\texorpdfstring{gen\+B\+B(glm\+::vec3, glm\+::vec3)}{genBB(glm::vec3, glm::vec3)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+Asset\+::gen\+BB (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3}]{p, }
+\item[{glm\+::vec3}]{param}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameAsset_af6e148d5c112bd024739ccffcbee603e}{}\label{classGameAsset_af6e148d5c112bd024739ccffcbee603e}
+generate min and max coords for A\+A\+B\+Bs \index{Game\+Asset@{Game\+Asset}!return\+Max@{return\+Max}}
+\index{return\+Max@{return\+Max}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{\texorpdfstring{return\+Max()}{returnMax()}}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Game\+Asset\+::return\+Max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameAsset_ae2661492933e0678c4c17b0f77083dc9}{}\label{classGameAsset_ae2661492933e0678c4c17b0f77083dc9}
+returns the max coordinate vector of an asset \index{Game\+Asset@{Game\+Asset}!return\+Min@{return\+Min}}
+\index{return\+Min@{return\+Min}!Game\+Asset@{Game\+Asset}}
+\subsubsection[{\texorpdfstring{return\+Min()}{returnMin()}}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Game\+Asset\+::return\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameAsset_a47ca91c87610d002d63f59563c038af9}{}\label{classGameAsset_a47ca91c87610d002d63f59563c038af9}
+returns the min coordinate vector of an asset 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Game\+Asset.\+h\end{DoxyCompactItemize}
+Game\+Asset.\+h\item 
+Game\+Asset.\+cc\end{DoxyCompactItemize}
