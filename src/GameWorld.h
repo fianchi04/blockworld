@@ -16,6 +16,7 @@
 #include "common.h"
 #include "GameAssetManager.h"
 #include "CubeAsset.h"
+#include "PlacedCubeAsset.h"
 #include "DiamondAsset.h"
 #include "FloorAsset.h"
 

@@ -88,7 +88,7 @@ void GameWorld::set_camera(GLfloat x, GLfloat y){
 void GameWorld::add_cube(){
 
     glm::vec3 temp = position + direction * glm::vec3(3,3,3);
-    asset_manager->AddAsset(std::make_shared<CubeAsset>(temp, 
+    asset_manager->AddAsset(std::make_shared<PlacedCubeAsset>(temp, 
                                                         glm::vec3(randomGen(), 0.0, 0.0)));
 }
 
@@ -152,10 +152,10 @@ void GameWorld::move_right(){
 void GameWorld::move_jump(GLfloat speed){
       //if jump has lasted less than 15 updates
       if(jumplength < 10){
-      //add passed speed to jumpspeed
-      jumpspeed += speed;
-      //counter to see how many frames jump has been on for
-      jumplength ++;
+     	 //add passed speed to jumpspeed
+     	 jumpspeed += speed;
+     	 //counter to see how many frames jump has been on for
+    	  jumplength ++;
       }
 	//stop jumping too fast
 	if(jumpspeed > 2){

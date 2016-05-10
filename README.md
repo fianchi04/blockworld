@@ -38,5 +38,7 @@ The build process should create a binary that can be executed as follows:
 Move player using standard W-A-S-D style.
 Move camera using mouse.
 Jump using space bar.
+Add cube to game space by left click.
+Add diamond to game space by right click.
 Close game by pressing Escape button.
 
