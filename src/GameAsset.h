@@ -8,10 +8,10 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
-#include <boost/uuid/uuid.hpp> //uuid class
-#include <boost/uuid/uuid_generators.hpp> //generators
-#include <boost/uuid/uuid_io.hpp> //streaming operators
 
+/**
+ * holds methods/variables which need to be access via inheritance by all asset types
+**/
 class GameAsset {
  public:
   GameAsset();

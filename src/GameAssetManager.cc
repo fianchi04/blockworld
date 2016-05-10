@@ -60,12 +60,11 @@ void GameAssetManager::operator=(GameAssetManager const& the_manager) {
  */
 void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
   for(auto ga: draw_list){
- 	if(ga -> collides(*the_asset)){
+ 	if(ga -> collides(*the_asset)){ //check for asset->asset collisions
 		std::cout << "asset collide" << std::endl;
 		return; //won't place cube down
 	}
   }
-
   draw_list.push_back(the_asset);
 }
 

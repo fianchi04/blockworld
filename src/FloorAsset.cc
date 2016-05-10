@@ -91,7 +91,7 @@ FloorAsset::~FloorAsset() {
 
 
 /**
- * return position of cube
+ * return position of floor
 **/
 glm::vec3 FloorAsset::getPos(){
 	return pos;
@@ -107,7 +107,7 @@ glm::vec3 FloorAsset::getPos(){
 
 
 /**
- * check for error in drawing cube
+ * check for error in drawing floor
 **/
 void FloorAsset::Draw(GLuint program_token) {
   if(!glIsProgram(program_token)) {

@@ -6,7 +6,7 @@ GameAsset::GameAsset(){
 }
 
 /**
- * check if AABBs are intersecting
+ * Check if AABBs are intersecting (passed min and max against the min and max of the current asset
 **/
 bool GameAsset::collides(glm::vec3 minB, glm::vec3 maxB){
   if (max.x > minB.x && min.x < maxB.x &&
@@ -17,13 +17,23 @@ bool GameAsset::collides(glm::vec3 minB, glm::vec3 maxB){
 	return false;
 }
 
+/**
+ * Receives a reference to an asset, calls returnMin() and returnMax() and passes these to the AABB collision
+ *  detection- needed for asset->asset collision
+**/
 bool GameAsset::collides(GameAsset &a){
    return collides(a.returnMin(), a.returnMax());
 }
 
+/**
+ * returns the min coordinate vector of an asset
+**/
 glm::vec3 GameAsset::returnMin(){
 	return min;
 }
+/**
+ * returns the max coordinate vector of an asset
+**/
 glm::vec3 GameAsset::returnMax(){
 	return max;
 }
@@ -37,11 +47,6 @@ void GameAsset::genBB(glm::vec3 p, glm::vec3 param){
   max = p + glm::vec3(param.x, param.y, param.z);
 
 }
-/*
-void sweep_and_prune(){
-   boost::uuids::uuid u;
-   for (boost::uuids::uuid::const_iterator it=u.begin(); it!=u.end(); ++it) {
-        boost::uuids::uuid::value_type v = *it;
-   }*/
+
 
 
